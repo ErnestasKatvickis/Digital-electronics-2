@@ -11,10 +11,12 @@
  **********************************************************************/
 
 /* Defines -----------------------------------------------------------*/
-#define LED_GREEN   PB5     // AVR pin where green LED is connected
-#define LED_RED     PC0
-#define BTN         PD0
-#define BLINK_DELAY 500
+#define LED_1   PB1     // AVR pin where green LED is connected
+#define LED_2   PB3 
+#define LED_3   PB5 
+#define LED_4   PC1 
+#define LED_5   PC3 
+#define BLINK_DELAY 150
 #ifndef F_CPU
 #define F_CPU 16000000      // CPU frequency in Hz required for delay
 #endif
@@ -30,33 +32,48 @@
  */
 int main(void)
 {
-    /* GREEN LED */
-    // Set pin as output in Data Direction Register...
-    DDRB = DDRB | (1<<LED_GREEN);
-    // ...and turn LED off in Data Register
-    PORTB = PORTB & ~(1<<LED_GREEN); //TURN OFF
+    // Set pins as output in Data Direction Register...
+    DDRB = DDRB | (1<<LED_1);
+	DDRB = DDRB | (1<<LED_2);
+	DDRB = DDRB | (1<<LED_3);
+	DDRC = DDRC | (1<<LED_4);
+	DDRC = DDRC | (1<<LED_5);
+    // ...and turn LEDs off in Data Register
+    PORTB = PORTB & ~(1<<LED_1); //TURN OFF
+	PORTB = PORTB & ~(1<<LED_2);
+	PORTB = PORTB & ~(1<<LED_3);
+	PORTC = PORTC & ~(1<<LED_4);
+	PORTC = PORTC & ~(1<<LED_5);
 
-    /* RED LED */
-    // WRITE YOUR CODE HERE
-	DDRC = DDRC | (1<<LED_RED); //output
-	PORTC = PORTC & ~(1<<LED_RED); //turn on
-	
-	/* PUSH BUTTON */
-	DDRD = DDRD & ~(1<<BTN); //clear the bit
-	PORTD = PORTD | (1<<BTN); //set the bit
     // Infinite loop
     while (1)
     {
         // Pause several milliseconds
-        _delay_ms(BLINK_DELAY);
 
-        // WRITE YOUR CODE HERE
-		if (bit_is_clear(PIND, BTN))
-		{
-			PORTB = PORTB ^ (1<<LED_GREEN);
-			PORTC = PORTC ^ (1<<LED_RED);
-		}		
-
+			PORTB = PORTB ^ (1<<LED_1); //TURN ON FIRST LED
+			_delay_ms(BLINK_DELAY);
+			PORTB = PORTB ^ (1<<LED_1); //TURN OFF FIRST LED
+			PORTB = PORTB ^ (1<<LED_2); //AT THE SAME TIME THE SECOND ONE TURNS ON
+			_delay_ms(BLINK_DELAY);
+			PORTB = PORTB ^ (1<<LED_2);
+			PORTB = PORTB ^ (1<<LED_3);
+			_delay_ms(BLINK_DELAY);
+			PORTB = PORTB ^ (1<<LED_3);
+			PORTC = PORTC ^ (1<<LED_4);
+			_delay_ms(BLINK_DELAY);
+			PORTC = PORTC ^ (1<<LED_4);
+			PORTC = PORTC ^ (1<<LED_5);
+			_delay_ms(BLINK_DELAY);
+			PORTC = PORTC ^ (1<<LED_5);
+			PORTC = PORTC ^ (1<<LED_4);
+			_delay_ms(BLINK_DELAY);
+			PORTC = PORTC ^ (1<<LED_4);
+			PORTB = PORTB ^ (1<<LED_3);
+			_delay_ms(BLINK_DELAY);
+			PORTB = PORTB ^ (1<<LED_3);
+			PORTB = PORTB ^ (1<<LED_2);
+			_delay_ms(BLINK_DELAY);
+			PORTB = PORTB ^ (1<<LED_2);
 		
     }
 
