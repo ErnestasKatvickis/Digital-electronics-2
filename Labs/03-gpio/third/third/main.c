@@ -52,8 +52,12 @@ int main(void)
         _delay_ms(BLINK_DELAY);
 
         // WRITE YOUR CODE HERE
-		GPIO_toggle(&PORTB, LED_GREEN);
-		GPIO_toggle(&PORTC, LED_RED);
+		if(GPIO_read(&PIND,BTN))
+		{
+			GPIO_toggle(&PORTB, LED_GREEN);
+			GPIO_toggle(&PORTC, LED_RED);
+		}
+		
     }
 
     // Will never reach this
