@@ -48,7 +48,6 @@ int main(void)
     // Infinite loop
     while (1)
     {
-        // Pause several milliseconds
 
 			PORTB = PORTB ^ (1<<LED_1); //TURN ON FIRST LED
 			_delay_ms(BLINK_DELAY);
