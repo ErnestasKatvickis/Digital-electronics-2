@@ -1,0 +1,36 @@
+<circuit type="simulide_0.4" noLinAcc="5" animate="0" reactStep="50" speed="1000000">
+ 
+atmega328-3: 
+<item hflip="1" id="atmega328-1" vflip="1" Init_gdb="false" Logic_Symbol="false" Program="" itemtype="AVR" labelx="0" labelrot="0" x="-352" eeprom="0" valLabely="0" rotation="0" Auto_Load="false" Show_id="true" Mhz="16" valLabRot="0" labely="-20" objectName="atmega328-3" valLabelx="0" y="-248"/>
+ 
+Hd44780-2: 
+<item labelx="70" Show_id="true" valLabRot="0" Rows="2" vflip="1" Cols="16" labelrot="0" itemtype="Hd44780" x="-672" hflip="1" rotation="0" objectName="Hd44780-2" labely="-82" valLabelx="0" valLabely="0" y="-244" id="Hd44780-2"/>
+ 
+Ground-1: 
+<item labelx="-16" Show_id="false" valLabRot="0" vflip="1" labelrot="0" itemtype="Ground" x="-648" hflip="1" rotation="0" objectName="Ground-1" labely="8" valLabelx="0" valLabely="0" y="-208" id="Ground-11"/>
+ 
+Connector-4: 
+<item hflip="1" id="Connector-6" vflip="1" itemtype="Connector" labelx="-16" labelrot="0" x="-600" valLabely="0" endpinid="atmega328-3-PD4" rotation="0" pointList="-600,-236,-600,-200,-360,-200" Show_id="false" valLabRot="0" labely="-24" enodeid="Circ_eNode-5" objectName="Connector-4" startpinid="Hd44780-2-dataPin4" valLabelx="0" y="-236"/>
+ 
+Connector-6: 
+<item hflip="1" id="Connector-7" vflip="1" itemtype="Connector" labelx="-16" labelrot="0" x="-656" valLabely="0" endpinid="atmega328-3-PB0" rotation="0" pointList="-656,-236,-656,-136,-360,-136" Show_id="false" valLabRot="0" labely="-24" enodeid="Circ_eNode-7" objectName="Connector-6" startpinid="Hd44780-2-PinRS" valLabelx="0" y="-236"/>
+ 
+Connector-8: 
+<item hflip="1" id="Connector-8" vflip="1" itemtype="Connector" labelx="-16" labelrot="0" x="-576" valLabely="0" endpinid="atmega328-3-PD7" rotation="0" pointList="-576,-236,-576,-144,-360,-144" Show_id="false" valLabRot="0" labely="-24" enodeid="Circ_eNode-9" objectName="Connector-8" startpinid="Hd44780-2-dataPin7" valLabelx="0" y="-236"/>
+ 
+Connector-10: 
+<item hflip="1" id="Connector-9" vflip="1" itemtype="Connector" labelx="-16" labelrot="0" x="-584" valLabely="0" endpinid="atmega328-3-PD6" rotation="0" pointList="-584,-236,-584,-152,-360,-152" Show_id="false" valLabRot="0" labely="-24" enodeid="Circ_eNode-11" objectName="Connector-10" startpinid="Hd44780-2-dataPin6" valLabelx="0" y="-236"/>
+ 
+Connector-12: 
+<item hflip="1" id="Connector-10" vflip="1" itemtype="Connector" labelx="-16" labelrot="0" x="-592" valLabely="0" endpinid="atmega328-3-PD5" rotation="0" pointList="-592,-236,-592,-160,-360,-160" Show_id="false" valLabRot="0" labely="-24" enodeid="Circ_eNode-13" objectName="Connector-12" startpinid="Hd44780-2-dataPin5" valLabelx="0" y="-236"/>
+ 
+Connector-14: 
+<item hflip="1" id="Connector-12" vflip="1" itemtype="Connector" labelx="-16" labelrot="0" x="-648" valLabely="0" endpinid="Ground-1-Gnd" rotation="0" pointList="-648,-236,-648,-224" Show_id="false" valLabRot="0" labely="-24" enodeid="Circ_eNode-15" objectName="Connector-14" startpinid="Hd44780-2-PinRW" valLabelx="0" y="-236"/>
+ 
+Connector-16: 
+<item hflip="1" id="Connector-13" vflip="1" itemtype="Connector" labelx="-16" labelrot="0" x="-640" valLabely="0" endpinid="atmega328-3-PB1" rotation="0" pointList="-640,-236,-640,-116,-296,-116,-296,-136,-312,-136" Show_id="false" valLabRot="0" labely="-24" enodeid="Circ_eNode-17" objectName="Connector-16" startpinid="Hd44780-2-PinEn" valLabelx="0" y="-236"/>
+ 
+PlotterWidget-18: 
+<item MaxVolt="500" modal="false" maximumWidth="1000" windowIcon="" windowModified="false" toolTip="" accessibleDescription="" windowIconText="" inputMethodHints="0" windowFilePath="" baseSize="" minimized="false" enabled="true" updatesEnabled="true" frameSize="" y="0" accessibleName="" sizeIncrement="" fullScreen="false" pos="" frameGeometry="" width="200" isActiveWindow="true" geometry="" childrenRect="" normalGeometry="" statusTip="" acceptDrops="false" cursor="" minimumHeight="200" rect="" objectName="PlotterWidget-18" minimumSize="" height="200" windowModality="0" itemtype="Plotter" maximumSize="" styleSheet="" childrenRegion="" visible="false" minimumWidth="200" Scale="1" size="" maximized="false" minimumSizeHint="" sizePolicy="" layoutDirection="0" Tracks="1" font="MS Shell Dlg 2,7.8,-1,5,50,0,0,0,0,0" mouseTracking="false" toolTipDuration="-1" maximumHeight="200" palette="" focus="false" windowOpacity="1" autoFillBackground="false" sizeHint="" windowTitle="" MinVolt="-500" contextMenuPolicy="1" whatsThis="" locale="" x="0" focusPolicy="0"/>
+ 
+</circuit>
