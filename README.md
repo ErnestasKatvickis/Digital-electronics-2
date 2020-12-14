@@ -1,25 +1,17 @@
-# Digital-electronics-2
-## My first README file
+# Digital Electronics 2 Project
+### Team members
 
-Emphasis, aka italics, with *asterisks* or _underscores_.
-Strong emphasis, aka bold, with **asterisks** or __underscores__.
-Combined emphasis with **asterisks and _underscores_**.
-Strikethrough uses two tildes. ~~Scratch this.~~
+Modestas Levišauskas [Link to GitHub project folder](https://github.com/ErnestasKatvickis/Digital-electronics-2/tree/master/Labs)
+Ernestas Katvickis [Link to GitHub project folder](https://github.com/ErnestasKatvickis/Digital-electronics-2/tree/master/Labs)
 
-1. First list item
-   - First nested list item
-     - Second nested list item
-     
-- firts
-- second
-- third
+### Projects objectives
 
-1. first
-2. second
-3. third
+## Hardware description
 
-his site was built using [GitHub Pages](https://pages.github.com/)
+## Code nescription and simulation
 
-- [x] Finish my changes
-- [ ] Push my commits to GitHub
-- [ ] Open a pull request
+## Animation
+
+## References
+
+
