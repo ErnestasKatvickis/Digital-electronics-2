@@ -63,18 +63,49 @@ Red LED is turned on and after short delay and the text is cleaned in the 2nd li
 ```c
 	void GreenBlink()
 	{
-		// GREEN led is turned on
 		GPIO_toggle(&PORTD,LED_GREEN);
-		// Short delay
 		_delay_us(1);
-		// The text in the 2nd line is deleted
 		lcd_gotoxy(0,1);
 		lcd_puts("                                      ");
-		// GREEN LED is tunred off
 		GPIO_toggle(&PORTD,LED_GREEN);
 	}
 ```
 First, green LED is turned on and then the text in the 2nd line is deleted. After deleting green LED is turned off
+
+```c
+	uint8_t scanKeyboard()
+	{
+		
+		
+		PORTC  |= (1<< COLUMN1) | (1<<COLUMN2) | (1<< COLUMN3);
+
+		
+		uint8_t rowState = PORTB;
+		uint8_t masker = 0b00001111;
+		// Reading 4, 5, 6 ports of PORTC
+		for(int i = 4; i < 7; i++)
+		{
+			PORTC &= ~(1 << i);
+			
+			/*Read all rows simultaneously and record 
+			  the data to be used in if statements later
+			  for indicating the specific key pressed*/
+			rowState = (masker & PINB);
+			
+			if(rowState != PORTB)
+			{
+				return PORTC | rowState;
+			}
+			else {}
+
+
+			//Reset
+			PORTC |= (1<< COLUMN1) | (1<<COLUMN2) | (1<< COLUMN3);
+			rowState = PORTB;
+		}
+		return 0;
+```
+First, we scan three columns of keypad. Columns are connected to C4, C5, C6 ports. Then we determine variable that will store the state of the row pins and mask fot the variable
 
 ## Animation
 
