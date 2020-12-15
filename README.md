@@ -26,7 +26,7 @@ We used SimulIDE for our scheme. The scheme consist of
 
 ## Code description and simulation
 
-```
+```ruby
 void Unlock()
 	{
 		// Output to the lock is high
