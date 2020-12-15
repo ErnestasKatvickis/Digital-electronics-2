@@ -2,7 +2,7 @@
 ### Team members
 
 - Modestas Levišauskas [Link to GitHub project folder](https://github.com/ErnestasKatvickis/Digital-electronics-2/tree/master/Labs)
-- Ernestas Katvickis [Link to GitHub project folder](https://github.com/ErnestasKatvickis/Digital-electronics-2/tree/master/Labs)
+- Ernestas Katvickis [Link to GitHub project folder](https://github.com/ErnestasKatvickis/Digital-electronics-2/tree/master/Project/Project)
 
 ### Projects objectives
 
@@ -10,9 +10,11 @@ Project objective is to create description of 4x3 keyboard control and in this p
 
 ## Hardware description
 
+We used SimulIDE for our scheme. The scheme is consist of LCD display, AVR microcontroller Atmega328, 4x3 keyboard, Audio out, Relay, BJT transistor, Fix voltage, Leds, Resistors and Grounds. 
+
 ![Scheme](https://github.com/ErnestasKatvickis/Digital-electronics-2/blob/master/Project/Project/Scheme.png)
 
-## Code nescription and simulation
+## Code description and simulation
 
 
 
