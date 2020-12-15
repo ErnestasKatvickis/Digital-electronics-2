@@ -26,7 +26,7 @@
 #include <inttypes.h>
 #include <avr/io.h>
 #include <avr/pgmspace.h>
-#ifndef F_CPU
+#ifndef F_CPU 
 #define F_CPU 16000000
 #endif
 #include <util/delay.h>
