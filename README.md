@@ -10,7 +10,17 @@ Project objective is to create description of 4x3 keyboard control and in this p
 
 ## Hardware description
 
-We used SimulIDE for our scheme. The scheme is consist of LCD display, AVR microcontroller Atmega328P, 4x3 keyboard, Audio output device, Relay, BJT transistor, Fix voltage, LEDs, Resistors and Grounds. 
+We used SimulIDE for our scheme. The scheme consist of
+- LCD display; 
+- AVR microcontroller Atmega328P;
+- 4x3 keyboard;
+- Audio output device;
+- Relay;
+- BJT transistor;
+- Fix voltage;
+- LEDs;
+- Resistors;
+- Grounds. 
 
 ![Scheme](https://github.com/ErnestasKatvickis/Digital-electronics-2/blob/master/Project/Scheme.png)
 
