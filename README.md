@@ -26,7 +26,48 @@ We used SimulIDE for our scheme. The scheme consist of
 
 ## Code description and simulation
 
-
+```
+void Unlock()
+	{
+		// Output to the lock is high
+		GPIO_write_high(&PORTC,Lock);
+		_delay_ms(100);
+		// Output is set low again
+		GPIO_write_low(&PORTC,Lock);
+	}
+	void Buzzer_sound()
+	{
+		// Output to the buzzes is set to high
+		GPIO_write_high(&PORTC,Buzzer);
+		_delay_ms(300);
+		// Output is set low again
+		GPIO_write_low(&PORTC,Buzzer);
+	}
+	void RedBlink()
+	{
+		// RED LED is turned on
+		GPIO_toggle(&PORTD,LED_RED);
+		// Short delay
+		_delay_us(1);
+		// The text is cleaned in the 2nd line
+		lcd_gotoxy(0,1);
+		lcd_puts("                                      ");
+		// RED LED is turned off
+		GPIO_toggle(&PORTD,LED_RED);
+	}
+	void GreenBlink()
+	{
+		// GREEN led is turned on
+		GPIO_toggle(&PORTD,LED_GREEN);
+		// Short delay
+		_delay_us(1);
+		// The text in the 2nd line is deleted
+		lcd_gotoxy(0,1);
+		lcd_puts("                                      ");
+		// GREEN LED is tunred off
+		GPIO_toggle(&PORTD,LED_GREEN);
+	}
+```
 
 ## Animation
 
