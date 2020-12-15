@@ -26,7 +26,7 @@ We used SimulIDE for our scheme. The scheme consist of
 
 ## Code description and simulation
 
-```ruby
+```c
 void Unlock()
 	{
 		GPIO_write_high(&PORTC,Lock);
@@ -37,7 +37,7 @@ void Unlock()
 Output to the lock is high
 Output is set low again
 
-```ruby
+```c
 	void Buzzer_sound()
 	{
 		GPIO_write_high(&PORTC,Buzzer);
@@ -48,7 +48,7 @@ Output is set low again
 Output to the buzzes is set to high
 Output is set low again
 
-```ruby
+```c
 	void RedBlink()
 	{
 		GPIO_toggle(&PORTD,LED_RED);
@@ -60,7 +60,7 @@ Output is set low again
 ```
 Red LED is turned on and after short delay and the text is cleaned in the 2nd line. After cleaning Red LED is turned off
 
-```ruby
+```c
 	void GreenBlink()
 	{
 		// GREEN led is turned on
