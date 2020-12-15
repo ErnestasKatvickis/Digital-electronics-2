@@ -2,7 +2,7 @@
  * Door_Lock.c
  *
  * Created: 2020-11-30 17:24:45
- * Author : Modestas
+ * Author : Ernestas
  */ 
 
 /* Includes ----------------------------------------------------------*/
