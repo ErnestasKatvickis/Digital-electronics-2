@@ -52,4 +52,5 @@ When the time limit is exceeded
 
 ## References
 
-[Reference](https://github.com/tomas-fryza/Digital-electronics-2)
+[1](https://github.com/tomas-fryza/Digital-electronics-2)
+[2](https://www.microchip.com/wwwproducts/en/ATmega328p)
