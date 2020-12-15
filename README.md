@@ -26,86 +26,15 @@ We used SimulIDE for our scheme. The scheme consist of
 
 ## Code description and simulation
 
-```c
-void Unlock()
-	{
-		GPIO_write_high(&PORTC,Lock);
-		_delay_ms(100);
-		GPIO_write_low(&PORTC,Lock);
-	}
-```
-Output to the lock is high
-Output is set low again
+First of all me and my partner though of a block diagram of how should the system work. Then we implemented it.
 
-```c
-	void Buzzer_sound()
-	{
-		GPIO_write_high(&PORTC,Buzzer);
-		_delay_ms(300);
-		GPIO_write_low(&PORTC,Buzzer);
-	}
-```
-Output to the buzzes is set to high
-Output is set low again
+![Block_diagram](https://github.com/ErnestasKatvickis/Digital-electronics-2/blob/master/Project/Block_diagram.png)
 
-```c
-	void RedBlink()
-	{
-		GPIO_toggle(&PORTD,LED_RED);
-		_delay_us(1);
-		lcd_gotoxy(0,1);
-		lcd_puts("                                      ");
-		GPIO_toggle(&PORTD,LED_RED);
-	}
-```
-Red LED is turned on and after short delay and the text is cleaned in the 2nd line. After cleaning Red LED is turned off
+According to this diagram we wrote our program code.
+First of all, it was necessary to write functions. First two functions were necessary for scanning the keyboard and determine the pressed key. For that we wrote two functions: scanKeyboard() and determineKey(). The function worked and now we can determine witch key is pressed. Next step was to write a code, so that pressed key would be stored in an entered_num massive of 4 numbers. Then we wrote a function ArrayComparison() to compare the entered password to the ones that are saved by the program. Afterwards we needed to set all I/O ports on the ATmega328 microcontroller so it would work properly, so we wrote a function setup(). To make main file less complex we created functions such as RedBlink() and GreenBlink() for LEDs to blink, Unlock() to unlock the door, Buzzer_sound() for the buzzer sound when the wrong password is inserted. All these functions can be found in the [function library.](https://github.com/ErnestasKatvickis/Digital-electronics-2/blob/master/Project/Door_Lock/Door_Lock/function.c)
 
-```c
-	void GreenBlink()
-	{
-		GPIO_toggle(&PORTD,LED_GREEN);
-		_delay_us(1);
-		lcd_gotoxy(0,1);
-		lcd_puts("                                      ");
-		GPIO_toggle(&PORTD,LED_GREEN);
-	}
-```
-First, green LED is turned on and then the text in the 2nd line is deleted. After deleting green LED is turned off
+In the main file we enabled the interrupt, LCD and UART. Then we tried to implement the code in the while(1) forewer loop. But we didn't know how to make a time limit in it. We tried using interrupts, but that didnt work properly. So we transfered all the code from while loop to the interrupt. We used TIM0_overflow_16ms. In the main function. And we used ADC convertion in the ISR(TIM0_interrupt) function. And in the ISR(ADC_vect) we wrote all the code. In the code we first defined all the variables necessary. Then we wrote the part were the keypad is scaned and the pressed key is determined. Afterwards we compare the entered password to the saved ones. If its correct the doors unlock. If it is incorrect then we start again from the start unless there were made 4 attempts. If 4 attempts were made than the program delay the input possibility by 3 seconds. There is another possibility aswell where the user doesn't enter the code at all. Than the program says that the user exceeded time limit and starts from the start. All the main code is in the [main.c file.](https://github.com/ErnestasKatvickis/Digital-electronics-2/blob/master/Project/Door_Lock/Door_Lock/main.c)
 
-```c
-	uint8_t scanKeyboard()
-	{
-		
-		
-		PORTC  |= (1<< COLUMN1) | (1<<COLUMN2) | (1<< COLUMN3);
-
-		
-		uint8_t rowState = PORTB;
-		uint8_t masker = 0b00001111;
-		// Reading 4, 5, 6 ports of PORTC
-		for(int i = 4; i < 7; i++)
-		{
-			PORTC &= ~(1 << i);
-			
-			/*Read all rows simultaneously and record 
-			  the data to be used in if statements later
-			  for indicating the specific key pressed*/
-			rowState = (masker & PINB);
-			
-			if(rowState != PORTB)
-			{
-				return PORTC | rowState;
-			}
-			else {}
-
-
-			//Reset
-			PORTC |= (1<< COLUMN1) | (1<<COLUMN2) | (1<< COLUMN3);
-			rowState = PORTB;
-		}
-		return 0;
-```
-First, we scan three columns of keypad. Columns are connected to C4, C5, C6 ports. Then we determine variable that will store the state of the row pins and mask fot the variable
 
 ## Animation
 
@@ -123,3 +52,4 @@ When the time limit is exceeded
 
 ## References
 
+[Reference](https://github.com/tomas-fryza/Digital-electronics-2)
