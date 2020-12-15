@@ -19,7 +19,7 @@ We used SimulIDE for our scheme. The scheme consist of
 - BJT transistor - is used as a switch;
 - Fix voltage - used as a power source;
 - LED's - here are Red and Green LED's. Red one signal that a wrong password was entered and the Green one signal that a right password was entered;
-- Resistors;
+- Resistors - are used to lower the current;
 - Grounds - is used to end the circuit. 
 
 ![Scheme](https://github.com/ErnestasKatvickis/Digital-electronics-2/blob/master/Project/Scheme.png)
@@ -30,7 +30,7 @@ We used SimulIDE for our scheme. The scheme consist of
 
 ## Animation
 
-
+![GIF](https://github.com/ErnestasKatvickis/Digital-electronics-2/blob/master/Project/GIF.gif)
 
 ## References
 
