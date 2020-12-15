@@ -29,12 +29,12 @@ We used SimulIDE for our scheme. The scheme consist of
 ```ruby
 void Unlock()
 	{
-		// Output to the lock is high
 		GPIO_write_high(&PORTC,Lock);
 		_delay_ms(100);
-		// Output is set low again
 		GPIO_write_low(&PORTC,Lock);
 	}
+```
+```ruby
 	void Buzzer_sound()
 	{
 		// Output to the buzzes is set to high
@@ -78,6 +78,10 @@ When the password is correct
 When the password is incorrect
 
 ![GIF2](https://github.com/ErnestasKatvickis/Digital-electronics-2/blob/master/Project/GIF2.gif)
+
+When the time limit is exceeded
+
+![GIF3](https://github.com/ErnestasKatvickis/Digital-electronics-2/blob/master/Project/GIF3.gif)
 
 ## References
 
