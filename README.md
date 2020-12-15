@@ -6,11 +6,11 @@
 
 ### Projects objectives
 
-Project objective is to create description of 4x3 keyboard control and in this project must be included an application of door lock system, display, door unlock relay, own library for keypad scanning, time limit for entering the correct 4-digit code, signaling of entering the wrong code, time delay for re-locking the lock approx. Also, another project objectives are self study, creation of own solution and presentation of results.
+Project objective is to create description of 4x3 keyboard control and in this project must be included an application of door lock system, display, door unlock relay, own library for keypad scanning, time limit for entering the correct 4-digit code, signaling of entering the wrong code, time delay for re-locking the lock approx. Also, another project objectives are self-study, creation of own solution and presentation of results.
 
 ## Hardware description
 
-We used SimulIDE for our scheme. The scheme consist of
+We used SimulIDE for our scheme. The scheme consists of
 - LCD display - shows to the user the status of situation. If the password is written incorrectly then the word "Incorrect" lights up on LCD;; 
 - AVR microcontroller Atmega328P - control the whole system;
 - 4x3 keyboard - is used for the intput of the password;
@@ -26,14 +26,14 @@ We used SimulIDE for our scheme. The scheme consist of
 
 ## Code description and simulation
 
-First of all me and my partner though of a block diagram of how should the system work. Then we implemented it.
+First of all, me and my partner though of a block diagram of how the system work should. Then we implemented it.
 
 ![Block_diagram](https://github.com/ErnestasKatvickis/Digital-electronics-2/blob/master/Project/Block_diagram.png)
 
 According to this diagram we wrote our program code.
 First of all, it was necessary to write functions. First two functions were necessary for scanning the keyboard and determine the pressed key. For that we wrote two functions: scanKeyboard() and determineKey(). The function worked and now we can determine witch key is pressed. Next step was to write a code, so that pressed key would be stored in an entered_num massive of 4 numbers. Then we wrote a function ArrayComparison() to compare the entered password to the ones that are saved by the program. Afterwards we needed to set all I/O ports on the ATmega328 microcontroller so it would work properly, so we wrote a function setup(). To make main file less complex we created functions such as RedBlink() and GreenBlink() for LEDs to blink, Unlock() to unlock the door, Buzzer_sound() for the buzzer sound when the wrong password is inserted. All these functions can be found in the [function library.](https://github.com/ErnestasKatvickis/Digital-electronics-2/blob/master/Project/Door_Lock/Door_Lock/function.c)
 
-In the main file we enabled the interrupt, LCD and UART. Then we tried to implement the code in the while(1) forewer loop. But we didn't know how to make a time limit in it. We tried using interrupts, but that didnt work properly. So we transfered all the code from while loop to the interrupt. We used TIM0_overflow_16ms. In the main function. And we used ADC convertion in the ISR(TIM0_interrupt) function. And in the ISR(ADC_vect) we wrote all the code. In the code we first defined all the variables necessary. Then we wrote the part were the keypad is scaned and the pressed key is determined. Afterwards we compare the entered password to the saved ones. If its correct the doors unlock. If it is incorrect then we start again from the start unless there were made 4 attempts. If 4 attempts were made than the program delay the input possibility by 3 seconds. There is another possibility aswell where the user doesn't enter the code at all. Than the program says that the user exceeded time limit and starts from the start. All the main code is in the [main.c file.](https://github.com/ErnestasKatvickis/Digital-electronics-2/blob/master/Project/Door_Lock/Door_Lock/main.c)
+In the main file we enabled the interrupt, LCD and UART. Then we tried to implement the code in the while (1) forever loop. But we did not know how to make a time limit in it. We tried using interrupts, but that did not work properly. So, we transferred all the code from while loop to the interrupt. We used TIM0_overflow_16ms. In the main function. And we used ADC conversion in the ISR(TIM0_interrupt) function. And in the ISR (ADC_vect) we wrote all the code. In the code we first defined all the variables necessary. Then we wrote the part were the keypad is scanned and the pressed key is determined. Afterwards we compare the entered password to the saved ones. If its correct the doors unlock. If it is incorrect then we start again from the start unless there were made 4 attempts. If 4 attempts were made than the program delay the input possibility by 3 seconds. There is another possibility as well where the user does not enter the code at all. Then the program says that the user exceeded time limit and starts from the start. All the main code is in the [main.c file.](https://github.com/ErnestasKatvickis/Digital-electronics-2/blob/master/Project/Door_Lock/Door_Lock/main.c)
 
 
 ## Animation
