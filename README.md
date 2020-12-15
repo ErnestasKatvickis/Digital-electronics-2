@@ -30,7 +30,13 @@ We used SimulIDE for our scheme. The scheme consist of
 
 ## Animation
 
+When the password is correct
+
 ![GIF](https://github.com/ErnestasKatvickis/Digital-electronics-2/blob/master/Project/GIF.gif)
+
+When the password is incorrect
+
+![GIF2](https://github.com/ErnestasKatvickis/Digital-electronics-2/blob/master/Project/GIF2.gif)
 
 ## References
 
